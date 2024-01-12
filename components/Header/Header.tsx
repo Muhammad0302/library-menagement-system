@@ -29,11 +29,12 @@ const Navbar = () => {
     <AppBar
       sx={{
         // zIndex: 2,
-        background: '#242424',
+        // background: '#242424',
+        background: '#121212',
         paddingLeft: { xs: '1px', sm: '55px' },
         paddingRight: { xs: '1px', md: '30px' },
       }}
-      position={'static'}
+      position={'fixed'}
     >
       <StyledToolbar>
         <SocialBox>

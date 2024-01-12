@@ -4,7 +4,7 @@ import './globals.css'
 import { PropsWithChildren } from 'react'
 import { lightTheme } from './theme/themes'
 import ContextProvider from './context-provider'
-
+import Box from '@mui/material/Box'
 import { ThemeProvider, CssBaseline } from '@mui/material'
 import Header from '@/components/Header'
 import Sidebar from '@/components/Sidebar'
@@ -29,11 +29,14 @@ export default function RootLayout({ children }: PropsWithChildren<{}>) {
           <body>
             <CssBaseline />
             {showHeader && <Header />}
-            <div>
+            <Box sx={{ display: 'flex' }}>
+              <CssBaseline />
               {showHeader && <Sidebar />}
               {/* {<Header/>} */}
-              {children}
-            </div>
+              <Box component='main' sx={{ flexGrow: 1, p: 3, backgroundColor: '#222222' }}>
+                {children}
+              </Box>
+            </Box>
           </body>
         </ContextProvider>
       </ThemeProvider>
