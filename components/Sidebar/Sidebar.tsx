@@ -16,11 +16,20 @@ import MailIcon from '@mui/icons-material/Mail'
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks'
 import DashboardIcon from '@mui/icons-material/Dashboard'
 import Groups2Icon from '@mui/icons-material/Groups2'
+import { useRouter } from 'next/navigation'
 const drawerWidth = 240
 
 const Sidebar = () => {
+  const router = useRouter()
   const handleSiderNavigation = (itemText: string) => {
     console.log('The item text is:', itemText)
+    if (itemText == 'Dashboard') {
+      router.push('/')
+    } else if (itemText === 'Become a Partner') {
+      router.push('/becomepartner')
+    } else if (itemText === 'About Us') {
+      router.push('/aboutus')
+    }
   }
   return (
     <>
