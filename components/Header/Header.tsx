@@ -28,6 +28,7 @@ const Navbar = () => {
   return (
     <AppBar
       sx={{
+        zIndex: 1,
         background: '#242424',
         paddingLeft: { xs: '1px', sm: '55px' },
         paddingRight: { xs: '1px', md: '30px' },
