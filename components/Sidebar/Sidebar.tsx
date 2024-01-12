@@ -27,8 +27,10 @@ const Sidebar = () => {
       router.push('/')
     } else if (itemText === 'Books') {
       router.push('/booklist')
-    } else if (itemText === 'About Us') {
-      router.push('/aboutus')
+    } else if (itemText === 'Members') {
+      router.push('/memberlist')
+    } else if (itemText === 'Issue Book') {
+      router.push('/issuebook')
     }
   }
   return (
