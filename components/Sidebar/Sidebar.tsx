@@ -25,8 +25,8 @@ const Sidebar = () => {
     console.log('The item text is:', itemText)
     if (itemText == 'Dashboard') {
       router.push('/')
-    } else if (itemText === 'Become a Partner') {
-      router.push('/becomepartner')
+    } else if (itemText === 'Books') {
+      router.push('/booklist')
     } else if (itemText === 'About Us') {
       router.push('/aboutus')
     }
