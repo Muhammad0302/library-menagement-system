@@ -37,7 +37,7 @@ const Navbar = () => {
       <StyledToolbar>
         <SocialBox>
           <Grid sx={{ marginTop: '5px' }}>
-            <img alt='AddToCartBtn' className='w-[120px] h-[60px]' src='./Images/lottery.png' />
+            <img alt='AddToCartBtn' className='w-[100px] h-[90px] ' src='./Images/lottery.png' />
           </Grid>
         </SocialBox>
 

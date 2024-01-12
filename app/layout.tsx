@@ -7,6 +7,7 @@ import ContextProvider from './context-provider'
 
 import { ThemeProvider, CssBaseline } from '@mui/material'
 import Header from '@/components/Header'
+import Sidebar from '@/components/Sidebar'
 import { usePathname } from 'next/navigation'
 
 export default function RootLayout({ children }: PropsWithChildren<{}>) {
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: PropsWithChildren<{}>) {
           <body>
             <CssBaseline />
             {showHeader && <Header />}
+            {showHeader && <Sidebar />}
             {/* {<Header/>} */}
             {children}
           </body>
