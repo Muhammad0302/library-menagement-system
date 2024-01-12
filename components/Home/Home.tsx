@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <>
       <Box>
-        <div className='hidden sm:flex justify-between items-center mx-16 lg:mx-24 '>
+        {/* <div className='hidden sm:flex justify-between items-center mx-16 lg:mx-24 '>
           <div className='flex gap-1'>
             <Link
               href={'/'}
@@ -14,10 +14,10 @@ const Home = () => {
               Home
             </Link>
           </div>
-        </div>
+        </div> */}
 
         <div className='mt-12 text-[28px] sm:text-[28px] md:text-[48px] lg:text-[60px] text-center font-russoone font-normal'>
-          Home Page{' '}
+          Analytics of Books
         </div>
       </Box>
     </>

@@ -13,10 +13,15 @@ import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
 import InboxIcon from '@mui/icons-material/MoveToInbox'
 import MailIcon from '@mui/icons-material/Mail'
-
+import LibraryBooksIcon from '@mui/icons-material/LibraryBooks'
+import DashboardIcon from '@mui/icons-material/Dashboard'
+import Groups2Icon from '@mui/icons-material/Groups2'
 const drawerWidth = 240
 
 const Sidebar = () => {
+  const handleSiderNavigation = (itemText: string) => {
+    console.log('The item text is:', itemText)
+  }
   return (
     <>
       <Drawer
@@ -32,25 +37,42 @@ const Sidebar = () => {
         <Toolbar />
         <Box sx={{ overflow: 'auto' }}>
           <List>
-            {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-              <ListItem key={text} disablePadding>
-                <ListItemButton>
-                  <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                  <ListItemText primary={text} />
-                </ListItemButton>
-              </ListItem>
-            ))}
+            {/* {['Dashboard', 'Books', 'Members'].map((text, index) => ( */}
+            <ListItem key='Dashboard' disablePadding>
+              <ListItemButton onClick={() => handleSiderNavigation('Dashboard')}>
+                <ListItemIcon>
+                  <DashboardIcon />{' '}
+                </ListItemIcon>
+                <ListItemText primary='Dashboard' />
+              </ListItemButton>
+            </ListItem>
+            <ListItem key='Books' disablePadding>
+              <ListItemButton onClick={() => handleSiderNavigation('Books')}>
+                <ListItemIcon>
+                  <LibraryBooksIcon />{' '}
+                </ListItemIcon>
+                <ListItemText primary='Books' />
+              </ListItemButton>
+            </ListItem>
+            <ListItem key='Members' disablePadding>
+              <ListItemButton onClick={() => handleSiderNavigation('Members')}>
+                <ListItemIcon>
+                  <Groups2Icon />{' '}
+                </ListItemIcon>
+                <ListItemText primary='Members' />
+              </ListItemButton>
+            </ListItem>
           </List>
           <Divider />
           <List>
-            {['All mail', 'Trash', 'Spam'].map((text, index) => (
-              <ListItem key={text} disablePadding>
-                <ListItemButton>
-                  <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                  <ListItemText primary={text} />
-                </ListItemButton>
-              </ListItem>
-            ))}
+            <ListItem key='Issue Book' disablePadding>
+              <ListItemButton onClick={() => handleSiderNavigation('Issue Book')}>
+                <ListItemIcon>
+                  <LibraryBooksIcon />{' '}
+                </ListItemIcon>
+                <ListItemText primary='Issue Book' />
+              </ListItemButton>
+            </ListItem>
           </List>
         </Box>
       </Drawer>
