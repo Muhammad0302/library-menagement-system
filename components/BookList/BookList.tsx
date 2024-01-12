@@ -76,7 +76,7 @@ const BookList = () => {
     <>
       {' '}
       <Box>
-        <div className='mt-12 text-[28px] sm:text-[28px] md:text-[48px] lg:text-[60px] text-center font-russoone font-normal'>
+        <div className='mt-7 text-[20x] sm:text-[28px] md:text-[32px] lg:text-[40px] text-center font-russoone font-normal'>
           Books list
         </div>
         <MUIDataTable title={'Books Information'} data={data} columns={columns} options={options} />

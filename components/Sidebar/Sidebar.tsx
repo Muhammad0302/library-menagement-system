@@ -81,7 +81,7 @@ const Sidebar = () => {
                 <ListItemIcon>
                   <LibraryBooksIcon />{' '}
                 </ListItemIcon>
-                <ListItemText primary='Issue Book' />
+                <ListItemText primary='Issue Books' />
               </ListItemButton>
             </ListItem>
           </List>
