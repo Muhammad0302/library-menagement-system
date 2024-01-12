@@ -29,9 +29,11 @@ export default function RootLayout({ children }: PropsWithChildren<{}>) {
           <body>
             <CssBaseline />
             {showHeader && <Header />}
-            {showHeader && <Sidebar />}
-            {/* {<Header/>} */}
-            {children}
+            <div>
+              {showHeader && <Sidebar />}
+              {/* {<Header/>} */}
+              {children}
+            </div>
           </body>
         </ContextProvider>
       </ThemeProvider>

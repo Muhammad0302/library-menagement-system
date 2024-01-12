@@ -20,19 +20,14 @@ const Sidebar = () => {
   return (
     <Box sx={{ display: 'flex', marginTop: '60px' }}>
       <CssBaseline />
-      {/* <AppBar position='fixed' sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
-        <Toolbar>
-          <Typography variant='h6' noWrap component='div'>
-            Clipped drawer
-          </Typography>
-        </Toolbar>
-      </AppBar> */}
+
       <Drawer
         variant='permanent'
         sx={{
           width: drawerWidth,
           flexShrink: 0,
           Top: '50px',
+          //   zIndex: 2,
           [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box' },
         }}
       >
@@ -61,7 +56,7 @@ const Sidebar = () => {
           </List>
         </Box>
       </Drawer>
-      <Box component='main' sx={{ flexGrow: 1, p: 3 }}>
+      <Box component='main' sx={{ flexGrow: 1, p: 3, backgroundColor: '#222222' }}>
         <Toolbar />
         <Typography paragraph>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
