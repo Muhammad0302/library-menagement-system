@@ -143,7 +143,7 @@ const IssueBook = () => {
         type='button'
         // onClick={() => Navigate('/addUser', { state: { isEdit: false } })}
       >
-        + Add Book
+        + Issue Book
       </Button>
     )
   }

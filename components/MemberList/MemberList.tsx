@@ -342,8 +342,19 @@ const MemberList = () => {
       },
     },
   ]
+  const HeaderElements = () => {
+    return (
+      <Button
+        type='button'
+        // onClick={() => Navigate('/addUser', { state: { isEdit: false } })}
+      >
+        + Add Member
+      </Button>
+    )
+  }
   const options = {
     filterType: 'checkbox' as const,
+    customToolbar: HeaderElements,
   }
   return (
     <>
