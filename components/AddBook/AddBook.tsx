@@ -25,9 +25,12 @@ const AddBook = () => {
   return (
     <div className='mt-6'>
       <form onSubmit={formik.handleSubmit}>
-        <Grid container spacing={3} sx={{ marginTop: '5px !important' }}>
-          <Grid item sm={1}></Grid>
-          <Grid item xs={12} sm={5}>
+        <Grid
+          container
+          spacing={3}
+          sx={{ marginTop: '5px !important', paddingLeft: '6rem', paddingRight: '6rem' }}
+        >
+          <Grid item xs={12} sm={6}>
             <TextField
               id='name'
               name='name'
@@ -40,7 +43,7 @@ const AddBook = () => {
               helperText={formik.touched.name && formik.errors.name}
             />
           </Grid>
-          <Grid item xs={12} sm={5}>
+          <Grid item xs={12} sm={6}>
             <TextField
               id='Region'
               name='Region'
@@ -54,9 +57,8 @@ const AddBook = () => {
               helperText={formik.touched.Region && formik.errors.Region}
             />
           </Grid>
-          <Grid item sm={1}></Grid>
-          <Grid item sm={1}></Grid>
-          <Grid item xs={12} sm={5}>
+
+          <Grid item xs={12} sm={6}>
             <TextField
               id='Cash'
               name='Cash'
@@ -73,7 +75,7 @@ const AddBook = () => {
               helperText={formik.touched.Cash && formik.errors.Cash}
             />
           </Grid>
-          <Grid item xs={12} sm={5}>
+          <Grid item xs={12} sm={6}>
             <TextField
               id='Card'
               name='Card'
@@ -90,8 +92,8 @@ const AddBook = () => {
               helperText={formik.touched.Card && formik.errors.Card}
             />
           </Grid>
-          <Grid item sm={1}></Grid>
-          <Grid item xs={11} container justifyContent='flex-end'>
+
+          <Grid item xs={12} container justifyContent='flex-end'>
             <Button
               type='submit'
               // onClick={() => setError(true)}
@@ -103,7 +105,6 @@ const AddBook = () => {
               Submit
             </Button>
           </Grid>
-          <Grid item sm={1}></Grid>
         </Grid>
       </form>
     </div>
