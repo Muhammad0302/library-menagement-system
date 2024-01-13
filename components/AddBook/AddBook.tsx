@@ -2,24 +2,28 @@ import React from 'react'
 import * as yup from 'yup'
 import { useFormik } from 'formik'
 import { Grid, TextField, Button } from '@mui/material'
-
+import { useRouter } from 'next/navigation'
 const validationSchema = yup.object({
   name: yup.string().required('Name is required'),
-  Region: yup.string().required('Region is required'),
-  Cash: yup.string().required('Cash is required'),
-  Card: yup.string().required('Card is required'),
+  category: yup.string().required('Category is required'),
+  author: yup.string().required('Author is required'),
+  rack: yup.string().required('Rack is required'),
+  shelf: yup.string().required('Shelf is required'),
 })
 const AddBook = () => {
+  const router = useRouter()
   const formik = useFormik({
     initialValues: {
       name: '',
-      Region: '',
-      Cash: '',
-      Card: '',
+      category: '',
+      author: '',
+      rack: '',
+      shelf: '',
     },
     validationSchema: validationSchema,
     onSubmit: async (values: any) => {
       console.log(values)
+      router.push('/booklist')
     },
   })
   return (
@@ -45,51 +49,67 @@ const AddBook = () => {
           </Grid>
           <Grid item xs={12} sm={6}>
             <TextField
-              id='Region'
-              name='Region'
-              label='Region'
+              id='category'
+              name='category'
+              label='Category'
               variant='outlined'
               fullWidth
-              type='text'
-              value={formik.values.Region}
+              value={formik.values.category}
               onChange={formik.handleChange}
-              error={formik.touched.Region && Boolean(formik.errors.Region)}
-              helperText={formik.touched.Region && formik.errors.Region}
+              error={formik.touched.category && Boolean(formik.errors.category)}
+              helperText={formik.touched.category && formik.errors.category}
             />
           </Grid>
 
           <Grid item xs={12} sm={6}>
             <TextField
-              id='Cash'
-              name='Cash'
-              label='Cash(%)'
+              id='author'
+              name='author'
+              label='Author'
               variant='outlined'
               fullWidth
               type='text'
-              value={formik.values.Cash}
+              value={formik.values.author}
               onKeyDown={(event) => {
                 event.stopPropagation()
               }}
               onChange={formik.handleChange}
-              error={formik.touched.Cash && Boolean(formik.errors.Cash)}
-              helperText={formik.touched.Cash && formik.errors.Cash}
+              error={formik.touched.author && Boolean(formik.errors.author)}
+              helperText={formik.touched.author && formik.errors.author}
             />
           </Grid>
           <Grid item xs={12} sm={6}>
             <TextField
-              id='Card'
-              name='Card'
-              label='Card(%)'
+              id='rack'
+              name='rack'
+              label='Rack'
               variant='outlined'
               fullWidth
               type='text'
-              value={formik.values.Card}
+              value={formik.values.rack}
               onChange={formik.handleChange}
               onKeyDown={(event) => {
                 event.stopPropagation()
               }}
-              error={formik.touched.Card && Boolean(formik.errors.Card)}
-              helperText={formik.touched.Card && formik.errors.Card}
+              error={formik.touched.rack && Boolean(formik.errors.rack)}
+              helperText={formik.touched.rack && formik.errors.rack}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              id='shelf'
+              name='shelf'
+              label='Shelf'
+              variant='outlined'
+              fullWidth
+              type='text'
+              value={formik.values.shelf}
+              onChange={formik.handleChange}
+              onKeyDown={(event) => {
+                event.stopPropagation()
+              }}
+              error={formik.touched.shelf && Boolean(formik.errors.shelf)}
+              helperText={formik.touched.shelf && formik.errors.shelf}
             />
           </Grid>
 
