@@ -7,9 +7,10 @@ import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined'
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined'
+import { useRouter } from 'next/navigation'
 const MemberList = () => {
   const [anchorEl, setAnchorEl] = useState(null)
-
+  const router = useRouter()
   const open = Boolean(anchorEl)
   const [activeRow, setActiveRow] = useState(null)
   const handleClick = (event: any, index: any) => {
@@ -18,6 +19,9 @@ const MemberList = () => {
   }
   const handleClose = () => {
     setAnchorEl(null)
+  }
+  const handleAddMember = () => {
+    router.push('/addmember')
   }
   const data = [
     [
@@ -322,9 +326,7 @@ const MemberList = () => {
                     'aria-labelledby': 'basic-button',
                   }}
                 >
-                  <MenuItem
-                  // onClick={() => handleEdit(tableMeta.rowData)}
-                  >
+                  <MenuItem onClick={handleAddMember}>
                     <ModeEditOutlineOutlinedIcon /> Edit
                   </MenuItem>
                   <MenuItem
@@ -344,10 +346,7 @@ const MemberList = () => {
   ]
   const HeaderElements = () => {
     return (
-      <Button
-        type='button'
-        // onClick={() => Navigate('/addUser', { state: { isEdit: false } })}
-      >
+      <Button type='button' onClick={handleAddMember}>
         + Add Member
       </Button>
     )

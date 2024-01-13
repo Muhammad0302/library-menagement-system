@@ -7,7 +7,9 @@ import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined'
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined'
+import { useRouter } from 'next/navigation'
 const BookList = () => {
+  const router = useRouter()
   const [anchorEl, setAnchorEl] = useState(null)
 
   const open = Boolean(anchorEl)
@@ -18,6 +20,9 @@ const BookList = () => {
   }
   const handleClose = () => {
     setAnchorEl(null)
+  }
+  const handleAddBook = () => {
+    router.push('/addbook')
   }
   const data = [
     ['Book 1', 'Fiction', 'Author 1', 'Rack 1', 'Shelf 1'],
@@ -108,9 +113,7 @@ const BookList = () => {
                     'aria-labelledby': 'basic-button',
                   }}
                 >
-                  <MenuItem
-                  // onClick={() => handleEdit(tableMeta.rowData)}
-                  >
+                  <MenuItem onClick={handleAddBook}>
                     <ModeEditOutlineOutlinedIcon /> Edit
                   </MenuItem>
                   <MenuItem
@@ -130,10 +133,7 @@ const BookList = () => {
   ]
   const HeaderElements = () => {
     return (
-      <Button
-        type='button'
-        // onClick={() => Navigate('/addUser', { state: { isEdit: false } })}
-      >
+      <Button type='button' onClick={handleAddBook}>
         + Add Book
       </Button>
     )
