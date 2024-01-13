@@ -1,7 +1,24 @@
 import { TextField, Box } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 import MUIDataTable from 'mui-datatables'
+import { Button } from '@mui/material'
+import MoreVertIcon from '@mui/icons-material/MoreVert'
+import Menu from '@mui/material/Menu'
+import MenuItem from '@mui/material/MenuItem'
+import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined'
+import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined'
 const IssueBook = () => {
+  const [anchorEl, setAnchorEl] = useState(null)
+
+  const open = Boolean(anchorEl)
+  const [activeRow, setActiveRow] = useState(null)
+  const handleClick = (event: any, index: any) => {
+    setAnchorEl(event.currentTarget)
+    setActiveRow(index)
+  }
+  const handleClose = () => {
+    setAnchorEl(null)
+  }
   const data = [
     ['Book 1', 'SSN123', '2022-01-12', '14:30', '$0.50', 'book1.jpg'],
     ['Book 2', 'SSN456', '2022-01-13', '15:45', '$0.75', 'book2.jpg'],
@@ -74,10 +91,66 @@ const IssueBook = () => {
         sort: false, // Assuming pictures are not meant to be sorted
       },
     },
+    {
+      name: 'Actions',
+      options: {
+        sort: false,
+        filter: false,
+        customBodyRender: (value: any, tableMeta: any, updateValue: any) => {
+          return (
+            <>
+              <Button
+                style={{ paddingTop: '0px', paddingBottom: '0px' }}
+                type='button'
+                onClick={(e) => handleClick(e, tableMeta.rowIndex)}
+              >
+                <MoreVertIcon />
+              </Button>
+              {activeRow === tableMeta.rowIndex ? (
+                <Menu
+                  id='basic-menu'
+                  anchorEl={anchorEl}
+                  open={open}
+                  onClose={handleClose}
+                  MenuListProps={{
+                    'aria-labelledby': 'basic-button',
+                  }}
+                >
+                  <MenuItem
+                  // onClick={() => handleEdit(tableMeta.rowData)}
+                  >
+                    <ModeEditOutlineOutlinedIcon /> Edit
+                  </MenuItem>
+                  <MenuItem
+                  // onClick={() => handleDelete(tableMeta.rowData[0])}
+                  >
+                    <DeleteOutlineOutlinedIcon /> Delete
+                  </MenuItem>
+                </Menu>
+              ) : (
+                ''
+              )}
+            </>
+          )
+        },
+      },
+    },
   ]
+
+  const HeaderElements = () => {
+    return (
+      <Button
+        type='button'
+        // onClick={() => Navigate('/addUser', { state: { isEdit: false } })}
+      >
+        + Add Book
+      </Button>
+    )
+  }
 
   const options = {
     filterType: 'checkbox' as const,
+    customToolbar: HeaderElements,
   }
   return (
     <>

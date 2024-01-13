@@ -45,10 +45,14 @@ const Navbar = () => {
 
         <Typography
           sx={{
-            fontWeight: '950',
             textTransform: 'uppercase',
-            fontSize: '12px',
             cursor: 'pointer',
+            fontFamily: 'Roboto',
+            fontWeight: 400,
+            fontSize: '1rem',
+            lineHeight: '1.5rem',
+            letterSpacing: '0.00938em',
+            display: 'block',
           }}
           onClick={handleLogin}
         >

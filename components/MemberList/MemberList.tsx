@@ -1,7 +1,24 @@
 import { TextField, Box } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 import MUIDataTable from 'mui-datatables'
+import { Button } from '@mui/material'
+import MoreVertIcon from '@mui/icons-material/MoreVert'
+import Menu from '@mui/material/Menu'
+import MenuItem from '@mui/material/MenuItem'
+import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined'
+import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined'
 const MemberList = () => {
+  const [anchorEl, setAnchorEl] = useState(null)
+
+  const open = Boolean(anchorEl)
+  const [activeRow, setActiveRow] = useState(null)
+  const handleClick = (event: any, index: any) => {
+    setAnchorEl(event.currentTarget)
+    setActiveRow(index)
+  }
+  const handleClose = () => {
+    setAnchorEl(null)
+  }
   const data = [
     [
       'John Doe',
@@ -278,6 +295,50 @@ const MemberList = () => {
       options: {
         filter: true,
         sort: false,
+      },
+    },
+    {
+      name: 'Actions',
+      options: {
+        sort: false,
+        filter: false,
+        customBodyRender: (value: any, tableMeta: any, updateValue: any) => {
+          return (
+            <>
+              <Button
+                style={{ paddingTop: '0px', paddingBottom: '0px' }}
+                type='button'
+                onClick={(e) => handleClick(e, tableMeta.rowIndex)}
+              >
+                <MoreVertIcon />
+              </Button>
+              {activeRow === tableMeta.rowIndex ? (
+                <Menu
+                  id='basic-menu'
+                  anchorEl={anchorEl}
+                  open={open}
+                  onClose={handleClose}
+                  MenuListProps={{
+                    'aria-labelledby': 'basic-button',
+                  }}
+                >
+                  <MenuItem
+                  // onClick={() => handleEdit(tableMeta.rowData)}
+                  >
+                    <ModeEditOutlineOutlinedIcon /> Edit
+                  </MenuItem>
+                  <MenuItem
+                  // onClick={() => handleDelete(tableMeta.rowData[0])}
+                  >
+                    <DeleteOutlineOutlinedIcon /> Delete
+                  </MenuItem>
+                </Menu>
+              ) : (
+                ''
+              )}
+            </>
+          )
+        },
       },
     },
   ]
