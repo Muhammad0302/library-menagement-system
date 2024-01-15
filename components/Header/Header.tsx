@@ -75,21 +75,7 @@ const Navbar = () => {
           </Grid>
         </SocialBox> */}
 
-        {/* <Typography
-          sx={{
-            textTransform: 'uppercase',
-            cursor: 'pointer',
-            fontFamily: 'Roboto',
-            fontWeight: 400,
-            fontSize: '1rem',
-            lineHeight: '1.5rem',
-            letterSpacing: '0.00938em',
-            display: 'block',
-            marginLeft: '19rem',
-          }}
-          onClick={handleLogin}
-        > */}
-        <div className='ml-[13rem] text-[20x] sm:text-[28px] md:text-[32px] lg:text-[24px] font-russoone font-normal'>
+        <div className='ml-[11.5rem] text-[20x] sm:text-[28px] md:text-[32px] lg:text-[24px] font-russoone font-normal'>
           Library Management System
         </div>
         {/* </Typography> */}
@@ -120,21 +106,6 @@ const Navbar = () => {
             </p>
           </div>
         </Modal>
-
-        {/* <List
-          style={{
-            position: 'absolute',
-            top: avatarRect?.top || 0,
-            left: avatarRect?.left || 0,
-          }}
-        >
-          <ListItem button onClick={handleClose}>
-            Item 1
-          </ListItem>
-          <ListItem button onClick={handleClose}>
-            Item 2
-          </ListItem>
-        </List> */}
       </StyledToolbar>
     </AppBar>
   )

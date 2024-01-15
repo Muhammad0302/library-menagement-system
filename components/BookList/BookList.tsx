@@ -147,7 +147,7 @@ const BookList = () => {
   return (
     <>
       {' '}
-      <Box>
+      <Box sx={{ padding: '24px' }}>
         <div className='mt-10 text-[20x] sm:text-[28px] md:text-[32px] lg:text-[40px] text-center font-russoone font-normal'>
           Books list
         </div>
