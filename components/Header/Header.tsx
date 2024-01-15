@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import MenuIcon from '@mui/icons-material/Menu'
-import { AppBar, Box, Menu, MenuItem, styled, Grid, Toolbar, Typography } from '@mui/material'
+import { AppBar, Box, Menu, MenuItem, styled, Grid, Toolbar, Typography, Avatar, FormControl, InputLabel, Select, Modal, Popover, List, ListItem } from '@mui/material'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
@@ -24,6 +24,21 @@ const Navbar = () => {
   const handleLogin = () => {
     router.push('/signin')
   }
+
+  const [modalOpen, setModalOpen] = useState(false);
+  const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
+
+  const handleAvatarClick = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+    setModalOpen(true);
+  };
+
+  const handleClose = () => {
+    setModalOpen(false);
+    setAnchorEl(null);
+  };
+
+  const avatarRect = anchorEl?.getBoundingClientRect();
 
   return (
     <AppBar
@@ -65,7 +80,7 @@ const Navbar = () => {
 
 
 
-        <Typography
+        {/* <Typography
           sx={{
             textTransform: 'uppercase',
             cursor: 'pointer',
@@ -76,10 +91,51 @@ const Navbar = () => {
             letterSpacing: '0.00938em',
             display: 'block',
           }}
-          onClick={handleLogin}
+        // onClick={handleLogin}
         >
           Login
-        </Typography>
+
+        </Typography> */}
+
+        <Avatar
+          src="/broken-image.jpg"
+          onClick={handleAvatarClick}
+          style={{ cursor: 'pointer' }}
+        />
+
+        <Modal
+          open={modalOpen}
+          onClose={handleClose}
+          aria-labelledby="simple-modal-title"
+          aria-describedby="simple-modal-description"
+          style={{
+            position: 'absolute',
+            top: avatarRect?.top || 0,
+            left: avatarRect?.left || 0,
+          }}
+        >
+          <div style={{ transform: 'translate(-10%, 50%)' }} className=' bg-white border-2 rounded-lg px-4 p-1 text-black'>
+            <h3 className=' text-base'>Options</h3>
+            <p className=' text-sm cursor-pointer'
+              onClick={handleLogin}
+            >Login</p>
+          </div>
+        </Modal>
+
+        {/* <List
+          style={{
+            position: 'absolute',
+            top: avatarRect?.top || 0,
+            left: avatarRect?.left || 0,
+          }}
+        >
+          <ListItem button onClick={handleClose}>
+            Item 1
+          </ListItem>
+          <ListItem button onClick={handleClose}>
+            Item 2
+          </ListItem>
+        </List> */}
       </StyledToolbar>
     </AppBar>
   )
