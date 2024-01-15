@@ -257,7 +257,7 @@ export default function Signin() {
                     sm: '362px',
                     smm: '463px',
                     md: '395px',
-                    lg: '538px',
+                    lg: '458px',
                     xl: '730px',
                   },
                 }}

@@ -357,8 +357,8 @@ const MemberList = () => {
   }
   return (
     <>
-      <Box>
-        <div className='mt-7 text-[20px] sm:text-[28px] md:text-[32px] lg:text-[40px] text-center font-russoone font-normal'>
+      <Box sx={{ padding: '24px' }}>
+        <div className='mt-10 text-[20px] sm:text-[28px] md:text-[32px] lg:text-[40px] text-center font-russoone font-normal'>
           Member list
         </div>
         <MUIDataTable

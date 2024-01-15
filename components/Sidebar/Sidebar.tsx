@@ -45,10 +45,19 @@ const Sidebar = () => {
           [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box' },
         }}
       >
-        <Toolbar />
+        {/* <Toolbar /> */}
+        <div className='flex justify-center items-center'><img src='Images/eco.png' className=' h-32 w-32' /></div>
         <Box sx={{ overflow: 'auto' }}>
           <List>
             {/* {['Dashboard', 'Books', 'Members'].map((text, index) => ( */}
+            {/* <ListItem key='logo' disablePadding>
+              <ListItemButton onClick={() => handleSiderNavigation('Dashboard')}>
+                <ListItemIcon>
+                  <DashboardIcon />{' '}
+                </ListItemIcon>
+
+              </ListItemButton>
+            </ListItem> */}
             <ListItem key='Dashboard' disablePadding>
               <ListItemButton onClick={() => handleSiderNavigation('Dashboard')}>
                 <ListItemIcon>
