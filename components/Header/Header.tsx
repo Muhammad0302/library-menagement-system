@@ -56,6 +56,28 @@ const Navbar = () => {
           }}
           onClick={handleLogin}
         >
+          <div className='-ml-32 text-[20x] sm:text-[28px] md:text-[32px] lg:text-[24px] font-russoone font-normal'>
+            Library Management System
+          </div>
+        </Typography>
+
+        <Typography />
+
+
+
+        <Typography
+          sx={{
+            textTransform: 'uppercase',
+            cursor: 'pointer',
+            fontFamily: 'Roboto',
+            fontWeight: 400,
+            fontSize: '1rem',
+            lineHeight: '1.5rem',
+            letterSpacing: '0.00938em',
+            display: 'block',
+          }}
+          onClick={handleLogin}
+        >
           Login
         </Typography>
       </StyledToolbar>
