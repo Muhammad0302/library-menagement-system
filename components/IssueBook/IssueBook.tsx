@@ -155,7 +155,7 @@ const IssueBook = () => {
   return (
     <>
       <Box>
-        <div className='mt-7 text-[20px] sm:text-[28px] md:text-[32px] lg:text-[40px] text-center font-russoone font-normal'>
+        <div className='mt-10 text-[20px] sm:text-[28px] md:text-[32px] lg:text-[40px] text-center font-russoone font-normal'>
           Issue books
         </div>
         <MUIDataTable
