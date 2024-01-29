@@ -61,8 +61,8 @@ const Navbar = () => {
     <AppBar
       sx={{
         // zIndex: 2,
-        // background: '#242424',
-        background: '#121212',
+        background: '#f23d4d',
+        // background: '#ed3237 ',
         paddingLeft: { xs: '1px', sm: '55px' },
         paddingRight: { xs: '1px', md: '30px' },
       }}
@@ -76,7 +76,7 @@ const Navbar = () => {
         </SocialBox> */}
 
         <div className='ml-[11.5rem] text-[20x] sm:text-[28px] md:text-[32px] lg:text-[24px] font-russoone font-normal'>
-          Library Management System
+          All Star Driving School Ltd
         </div>
         {/* </Typography> */}
 

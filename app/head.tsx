@@ -1,9 +1,9 @@
 export default function Head() {
   return (
     <>
-      <title>Library Management System</title>
+      <title>All Star Driving School Ltd</title>
       <meta content='width=device-width, initial-scale=1' name='viewport' />
-      <meta name='description' content='Library Management System' />
+      <meta name='description' content='All Star Driving School Ltd' />
       <link rel='icon' href='/favicon.ico' />
       {/* <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"/>

@@ -46,7 +46,9 @@ const Sidebar = () => {
         }}
       >
         {/* <Toolbar /> */}
-        <div className='flex justify-center items-center'><img src='Images/eco.png' className=' h-32 w-32' /></div>
+        <div className='flex justify-center items-center'>
+          <img src='Images/logo.jpg' className=' w-100%' />
+        </div>
         <Box sx={{ overflow: 'auto' }}>
           <List>
             {/* {['Dashboard', 'Books', 'Members'].map((text, index) => ( */}
